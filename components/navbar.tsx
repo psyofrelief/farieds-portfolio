@@ -36,7 +36,7 @@ const Navbar = () => {
   ];
 
   // Function to handle toggling menu with Enter key
-  const handleToggleMenu = (e: React.KeyboardEvent<HTMLParagraphElement>) => {
+  const handleToggleMenu = (e: React.KeyboardEvent<HTMLButtonElement>) => {
     if (e.key === "Enter") {
       toggleMenuVisibility();
     }
@@ -67,14 +67,14 @@ const Navbar = () => {
             ))}
           </div>
           <SocialIcons />
-          <p
+          <button
             className="btn-menu"
             onClick={toggleMenuVisibility}
             tabIndex={0}
             onKeyDown={handleToggleMenu}
           >
             .find()
-          </p>
+          </button>
         </>
       )}
     </nav>

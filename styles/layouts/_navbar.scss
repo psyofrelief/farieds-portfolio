@@ -21,6 +21,8 @@
     padding: 8px 0;
     cursor: pointer;
     font-size: $base-font-size;
+    background: none;
+    font-family: $body-font;
 
     &:hover {
       color: $clr-text-comment;
@@ -55,7 +57,7 @@
   }
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 900px) {
   #navbar--component .container--tabs,
   #navbar--component .container--social-icons {
     display: none;
