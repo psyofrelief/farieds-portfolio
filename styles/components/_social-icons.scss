@@ -1,0 +1,23 @@
+@import "../abstracts/variables";
+// Social icons container
+.container--social-icons {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+  gap: 10px;
+
+  .social-icon {
+    height: auto;
+    width: 35px;
+    padding: 0px;
+    flex: 1;
+    margin: 0px;
+    fill: $clr-text-comment;
+
+    &:hover {
+      fill: $clr-text-secondary;
+      transform: scale(1.03);
+    }
+  }
+}

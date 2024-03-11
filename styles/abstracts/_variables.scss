@@ -1,0 +1,22 @@
+@import "../base/typography";
+@import "mixins";
+
+// Background Colors
+$clr-bg: hsl(15, 36%, 4%);
+$clr-bg-secondary: hsl(10, 70%, 6%);
+
+// Accent Colors
+$clr-accent-primary: hsl(30, 98%, 75%);
+$clr-accent-secondary: hsl(7, 78%, 66%);
+
+// Text Colors
+$clr-text-primary: hsl(20, 100%, 96%);
+$clr-text-secondary: hsl(19, 58%, 94%);
+$clr-text-comment: hsl(350, 35%, 47%);
+
+// Loading Modal Gradient
+$clr-loading-modal: linear-gradient(
+  $clr-accent-primary calc(50% - 11.2px),
+  $clr-bg 0 calc(50% + 11.2px),
+  $clr-accent-secondary 0
+);

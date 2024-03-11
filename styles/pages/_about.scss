@@ -1,0 +1,115 @@
+@import "../abstracts/variables";
+@import "../base/typography";
+@import "../abstracts/mixins";
+#page--about {
+  @include flex-column;
+  flex: 1;
+  min-height: 100vh;
+  gap: 60px;
+
+  .main-comment {
+    margin: 0;
+    margin-bottom: 40px;
+  }
+
+  .container--links {
+    display: flex;
+    align-items: center;
+    z-index: 1;
+
+    .container--download-cv {
+      display: flex;
+      align-items: center;
+      margin-left: 1.5em;
+      white-space: nowrap;
+      font-size: $small-font-size;
+      font-weight: $base-font-weight;
+      color: $clr-text-primary;
+
+      .download-cv-link {
+        display: flex;
+        align-items: center;
+        margin-left: 0.8em;
+        border-radius: 20px;
+        color: $clr-bg;
+        background-color: $clr-accent-secondary;
+        padding: 0.4em 1em;
+        font-weight: $bold-font-weight;
+
+        &:hover {
+          background-color: $clr-bg;
+          color: $clr-text-secondary;
+          outline: 2px solid $clr-text-secondary;
+
+          .launch-icon {
+            fill: $clr-text-secondary;
+          }
+        }
+
+        .launch-icon {
+          fill: $clr-bg;
+          width: 22px;
+          height: auto;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+
+  .about-intro {
+    font-size: $base-font-size;
+    color: $clr-accent-secondary;
+    font-weight: $base-font-weight;
+    z-index: 1;
+  }
+
+  .about-grid {
+    @include flex-column;
+    margin-top: 0.5em;
+    z-index: 1;
+    font-family: $body-font;
+
+    .about-grid-heading {
+      margin-bottom: 1em;
+      margin-top: 2em;
+      font-size: $large-font-size;
+      font-weight: $xbold-font-weight;
+      color: $clr-text-primary;
+    }
+
+    .columns {
+      display: grid;
+      gap: 1em;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+      > li {
+        @include flex-column;
+        font-size: $base-font-size;
+        font-weight: $base-font-weight;
+        color: $clr-text-secondary;
+        line-height: 25px;
+      }
+
+      &.skills li {
+        max-width: 250px;
+      }
+
+      &.languages {
+        white-space: nowrap;
+
+        .comment {
+          margin-bottom: 0.5em;
+          color: $clr-text-comment;
+        }
+
+        .tag {
+          font-weight: $bold-font-weight;
+          color: $clr-accent-primary;
+        }
+      }
+    }
+  }
+}

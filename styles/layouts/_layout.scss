@@ -1,0 +1,49 @@
+.page-wrapper {
+  @include flex-column;
+  flex: 1;
+  font-family: $body-font;
+
+  .background-svg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/images/background.svg"); // Path to your SVG file
+    background-size: cover;
+    pointer-events: none; // Ensure the background doesn't intercept pointer events
+    z-index: -1;
+  }
+
+  main {
+    @include flex-column;
+    padding: 170px 7.5% 25px 7.5%;
+    flex: 1;
+
+    .main-heading {
+      font-size: $xxl-font-size;
+      font-family: $heading-font;
+      color: $clr-text-primary;
+      span {
+        color: $clr-accent-primary;
+      }
+    }
+
+    .main-comment {
+      color: $clr-text-comment;
+      font-size: $base-font-size;
+      font-weight: $bold-font-weight;
+      margin: 2em 0;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .page-wrapper main {
+    padding: 140px 6% 80px 6%;
+
+    .main-heading {
+      font-size: $xl-font-size;
+    }
+  }
+}

@@ -1,0 +1,171 @@
+@import "../abstracts/variables";
+@import "../base/typography";
+
+#page--projects {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+
+  .project-image {
+    align-self: end;
+    height: auto;
+    max-width: 50%;
+  }
+
+  .container--project-info {
+    @include flex-column;
+    flex: 1;
+    gap: 20px;
+    justify-content: flex-end;
+
+    .container--project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+
+      .project-link {
+        align-items: center;
+        border-radius: 20px;
+        display: flex;
+        flex: 1;
+        font-size: $base-font-size;
+        font-weight: $bold-font-weight;
+        justify-content: center;
+        padding: 0.5em 1em;
+        white-space: nowrap;
+
+        &:first-child {
+          background-color: $clr-text-primary;
+          color: $clr-bg;
+
+          &:hover {
+            background-color: $clr-accent-secondary;
+            text-decoration: underline;
+          }
+        }
+
+        &:last-child {
+          background-color: $clr-bg;
+          color: $clr-text-primary;
+          border: 2px solid $clr-text-primary;
+
+          &:hover {
+            background-color: $clr-accent-primary;
+            color: $clr-bg;
+          }
+        }
+      }
+    }
+
+    .project-description {
+      color: $clr-accent-secondary;
+      font-size: $base-font-size;
+      font-style: italic;
+      font-weight: $base-font-size;
+    }
+
+    .project-name {
+      color: $clr-accent-primary;
+      font-size: $xl-font-size;
+      font-family: $heading-font;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .container--projects {
+    @include flex-column;
+    gap: 50vh;
+    margin-top: 10vh;
+
+    .project {
+      column-gap: 50px;
+      display: flex;
+      flex-wrap: nowrap;
+      min-height: 100%;
+      z-index: 2;
+
+      .container--technologies {
+        @include flex-column;
+        align-self: start;
+        position: relative;
+
+        .technologies {
+          color: $clr-accent-primary;
+          display: flex;
+          font-size: $small-font-size;
+          font-weight: $bold-font-weight;
+          gap: 1em;
+          margin-top: 2.3em;
+          position: absolute;
+        }
+
+        .toggle-technologies {
+          display: flex;
+          align-items: center;
+          color: $clr-text-secondary;
+          cursor: pointer;
+          font-size: $small-font-size;
+          font-weight: $base-font-weight;
+          margin-bottom: 1.5em;
+
+          &:focus {
+            outline: none;
+            text-decoration: underline;
+          }
+
+          &:hover {
+            color: $clr-text-primary;
+            text-decoration: underline;
+          }
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 25vh;
+      }
+
+      &:nth-child(2n) {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  .arrow {
+    width: 35px;
+    height: auto;
+    padding-bottom: 1px;
+    fill: $clr-text-secondary;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  #page--projects .container--projects .project {
+    display: flex;
+    flex-direction: column;
+    row-gap: 80px;
+
+    &:nth-child(2n) {
+      flex-direction: column;
+    }
+
+    .project-image {
+      max-width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  #page--projects
+    .container--projects
+    .project
+    .container--technologies
+    .technologies {
+    position: relative;
+    font-size: 0.9rem;
+    gap: 0.7em;
+    margin: 0;
+    white-space: wrap;
+    flex-wrap: wrap;
+  }
+}

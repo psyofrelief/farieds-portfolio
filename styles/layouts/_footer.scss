@@ -1,0 +1,15 @@
+@import "../abstracts/variables";
+@import "../base/typography";
+
+#footer--component {
+  text-align: center;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  padding: 18px 0;
+  z-index: 2;
+  font-size: $small-font-size;
+  background-color: $clr-bg;
+  color: $clr-text-secondary;
+  font-weight: $base-font-weight;
+}

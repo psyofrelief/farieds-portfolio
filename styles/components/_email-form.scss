@@ -1,0 +1,153 @@
+@import "../abstracts/variables";
+@import "../base/_typography";
+
+#email-form {
+  background-color: $clr-bg-secondary;
+  border: 3px solid $clr-text-comment;
+  border-radius: 20px;
+  display: grid;
+  gap: 40px 20px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto 1fr auto auto;
+  max-width: 1000px;
+  padding: 40px 50px;
+  z-index: 1;
+
+  label {
+    color: $clr-text-secondary;
+    margin-bottom: 0.5em;
+  }
+
+  input,
+  textarea {
+    background-color: $clr-bg;
+    border: 1px solid $clr-text-comment;
+    border-radius: 6px;
+    color: $clr-text-primary;
+    font-family: $body-font;
+    font-size: 0.9rem;
+    padding: 0.8em;
+
+    &::placeholder {
+      color: $clr-text-secondary;
+      font-weight: $bold-font-weight;
+      font-size: $small-font-size;
+    }
+  }
+
+  .alert {
+    font-size: $base-font-size;
+    font-weight: $bold-font-weight;
+    color: $clr-text-secondary;
+    grid-column: 1 / 3;
+  }
+
+  .btn-copy-email,
+  .btn-send-email {
+    align-items: center;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    font-family: $body-font;
+    font-size: $base-font-size;
+    font-weight: $bold-font-weight;
+    justify-content: center;
+    padding: 0.4em 0.6em;
+  }
+
+  .btn-copy-email {
+    background-color: $clr-bg;
+    border: 2px solid $clr-text-primary;
+    color: $clr-text-primary;
+
+    &:hover {
+      color: $clr-bg;
+      background-color: $clr-accent-primary;
+    }
+  }
+
+  .btn-send-email {
+    background-color: $clr-text-primary;
+    color: $clr-bg;
+    &.success {
+      background-color: $clr-accent-secondary;
+    }
+
+    &:hover {
+      background-color: $clr-accent-secondary;
+      text-decoration: underline;
+    }
+  }
+
+  .container--input {
+    @include flex-column;
+
+    label {
+      margin-right: 1em;
+    }
+  }
+
+  .container--textarea {
+    @include flex-column;
+    grid-column: 1 / 3;
+
+    span {
+      color: $clr-accent-secondary;
+      font-size: 0.9em;
+      font-weight: $base-font-weight;
+      white-space: nowrap;
+    }
+
+    textarea {
+      max-height: 250px;
+      resize: none;
+    }
+  }
+}
+
+.blob {
+  width: 20px;
+  height: 20px;
+  background: $clr-bg;
+  border-radius: 50%;
+  filter: blur(0.5px) contrast(10);
+  animation: blob-rokv0k 2s infinite linear;
+}
+
+@keyframes blob-rokv0k {
+  12.5% {
+    border-radius: 37% 63% 70% 30% / 30% 62% 38% 70%;
+  }
+  // Rest of keyframes...
+}
+
+/* KEYFRAMES */
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  // Rest of keyframes...
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 800px) {
+  #email-form {
+    padding: 40px 35px;
+
+    .alert {
+      font-size: $small-font-size;
+      white-space: nowrap;
+    }
+
+    .btn-copy-email,
+    .btn-send-email {
+      font-size: $base-font-size;
+      white-space: nowrap;
+    }
+
+    .container--input {
+      grid-column: 1 / 3;
+    }
+  }
+}

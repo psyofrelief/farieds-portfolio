@@ -1,0 +1,17 @@
+@import "abstracts/variables";
+
+@import "base/globals";
+@import "base/resets";
+
+@import "components/menu";
+@import "components/social-icons";
+@import "components/email-form";
+
+@import "layouts/footer";
+@import "layouts/navbar";
+@import "layouts/layout";
+
+@import "pages/about";
+@import "pages/index";
+@import "pages/projects";
+@import "pages/contact";

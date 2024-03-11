@@ -1,0 +1,67 @@
+@import "../abstracts/variables";
+@import "../base/typography";
+
+#navbar--component {
+  display: flex;
+  align-items: center;
+  min-height: 50px;
+  padding: 10px 16px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  .container--social-icons {
+    padding: 8px 0;
+  }
+
+  .btn-menu {
+    display: none;
+    color: $clr-text-primary;
+    padding: 8px 0;
+    cursor: pointer;
+    font-size: $base-font-size;
+
+    &:hover {
+      color: $clr-text-comment;
+    }
+  }
+
+  .container--tabs {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 1em;
+
+    .navbar-tab {
+      color: $clr-text-comment;
+      padding: 0.4em 0.6em;
+      border-radius: 6px;
+      font-weight: $bold-font-weight;
+      font-size: $base-font-size;
+
+      &:hover {
+        color: $clr-text-secondary;
+        text-decoration: underline;
+      }
+
+      &.active {
+        pointer-events: none;
+        outline: 3px solid $clr-text-comment;
+        color: $clr-accent-secondary;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  #navbar--component .container--tabs,
+  #navbar--component .container--social-icons {
+    display: none;
+  }
+
+  #navbar--component .btn-menu {
+    display: block;
+  }
+}

@@ -1,0 +1,146 @@
+@import "../abstracts/variables";
+@import "../base/_typography";
+
+#menu--component {
+  @include flex-column;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.8),
+    hsla(15, 30%, 8%, 0.93) 60%
+  );
+  bottom: 0;
+  color: $clr-text-primary;
+  justify-content: flex-end;
+  left: 0;
+  min-height: 50px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 4;
+  padding: 0;
+
+  .container--social-icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    width: 100px;
+    padding: 10px;
+    align-self: flex-end;
+
+    .social-icon {
+      flex: 1;
+      width: 80px;
+      height: 100%;
+    }
+  }
+
+  .container--menu-tabs {
+    @include flex-column;
+    align-items: flex-end;
+    display: flex;
+    justify-content: flex-end;
+    line-height: 60px;
+    margin-bottom: 20px;
+
+    .container--menu-tab-link {
+      display: flex;
+
+      .menu-tab-link {
+        color: $clr-text-secondary;
+        padding: 0.5em 0.3em;
+        z-index: 1;
+        font-size: $xxl-font-size;
+        font-weight: $xbold-font-weight;
+
+        &.active {
+          color: $clr-text-comment;
+          text-decoration: line-through;
+          pointer-events: none;
+        }
+
+        &:hover {
+          color: $clr-accent-secondary;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .container--social-icons-menu {
+    display: flex;
+    gap: 1em;
+    justify-content: flex-end;
+    margin-right: 2px;
+    margin-top: 2em;
+    padding: 6px 20px;
+
+    a {
+      align-items: center;
+      display: flex;
+      flex: 1;
+      max-width: 70px;
+
+      .social-icon {
+        cursor: pointer;
+        fill: $clr-text-secondary;
+
+        &:hover {
+          fill: $clr-accent-secondary;
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+}
+
+.menu-header {
+  align-items: center;
+  color: $clr-text-primary;
+  display: flex;
+  justify-content: space-between;
+  min-height: 50px;
+  padding: 10px 16px;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: 5;
+
+  .btn-close {
+    background: none;
+    color: $clr-text-secondary;
+    cursor: pointer;
+    font-family: $body-font;
+    font-size: $base-font-size;
+    padding: 8px 0;
+
+    &:hover {
+      color: $clr-text-comment;
+    }
+  }
+
+  .header-logo {
+    color: $clr-accent-primary;
+    font-size: $base-font-size;
+    font-weight: $bold-font-weight;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 700px) {
+  #menu--component
+    .container--menu-tabs
+    .container--menu-tab-link
+    .menu-tab-link {
+    font-size: $xl-font-size;
+  }
+
+  #menu--component .container--social-icons-menu a {
+    max-width: 60px;
+  }
+}
