@@ -4,13 +4,19 @@ import { useEffect } from "react";
 import SocialIcons from "@/components/social-icons";
 import AnimatedComment from "@/components/animated-comment";
 import LaunchIcon from "@/components/launchicon";
+import { useMyContext } from "@/context/index";
 
 // Define the About component
 const About = () => {
+  const { setActiveTab } = useMyContext();
   useEffect(() => {
     document.title = "About";
   });
 
+  useEffect(() => {
+    // Set the initial active tab when the component mounts
+    setActiveTab(window.location.pathname);
+  }, []);
   return (
     <div id="page--about">
       <h1 className="main-heading">

@@ -1,5 +1,5 @@
 "use client";
-import { ReactNode } from "react";
+import { ReactNode, useEffect } from "react";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import Menu from "@/components/menu";
@@ -9,7 +9,13 @@ type pageWrapperProps = {
   children: ReactNode;
 };
 export default function PageWrapper({ children }: pageWrapperProps) {
-  const { menuVisibility } = useMyContext();
+  const { menuVisibility, setActiveTab } = useMyContext();
+
+  useEffect(() => {
+    // Set the initial active tab when the component mounts
+    setActiveTab(window.location.pathname);
+  }, []);
+
   return (
     <div className="page-wrapper">
       {menuVisibility && <Menu />}

@@ -22,7 +22,6 @@ const Navbar = () => {
     }
   }, [menuVisibility]);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     // Set the initial active tab when the component mounts
     setActiveTab(window.location.pathname);
