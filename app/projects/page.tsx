@@ -15,6 +15,14 @@ const Projects: NextPage = () => {
   // Define project data for each project
   const projectsData = [
     {
+      title: "Typa",
+      description: "Typing test website",
+      image: "/images/typa-preview.png",
+      technologies: ["NextJS", "TypeScript", "React", "SQL", "SCSS"],
+      github: "https://github.com/psyofrelief/typa",
+      liveLink: "https://typa.vercel.app/",
+    },
+    {
       title: "Shorty",
       description: "URL Shortening Service",
       image: "/images/shorty-preview.png",
@@ -37,14 +45,6 @@ const Projects: NextPage = () => {
       technologies: ["React", "JavaScript", "SCSS", "HTML"],
       github: "https://github.com/psyofrelief/enkrypto",
       liveLink: "https://psyofrelief.github.io/enkrypto/",
-    },
-    {
-      title: "Money Metrics",
-      description: "Currency / unit conversion website",
-      image: "/images/moneymetrics-preview.png",
-      technologies: ["React", "JavaScript", "SCSS", "HTML"],
-      github: "https://github.com/psyofrelief/MoneyMetrics",
-      liveLink: "https://psyofrelief.github.io/MoneyMetrics/",
     },
   ];
 
